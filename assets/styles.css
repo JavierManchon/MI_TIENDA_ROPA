@@ -13,12 +13,26 @@ header {
     height: 10vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center; 
+    margin-top: 10px;;
 }
 
-nav, .title, .browser-n-filter {
+nav, .browser-n-filter {
     width: 20%;
-    height: 100%;
+    height: 70%;
+    font-size: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav img {
+    height: 60%;
+}
+
+nav h2, nav ul {
+    display: none;
 }
 
 nav {
@@ -30,35 +44,58 @@ nav {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+    font-size: 100%;
 }
 
 .title ul {
     width: 100%;
     display: flex;
     flex-direction: row;
+    display: none;
 }
 
 .browser-n-filter {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
 }
 
+.browser-n-filter i {
+    font-size: 30px;
+}
+
+/* Problema con el filter, display none temporal*/
+
 .filter {
-    display: flex;
+    top: 0;
+    left: 75vw;
+    display: none;
     flex-direction: row;
     width: 100%;
+    height: 10%;
+}
+
+.browser {
+    display: none;
 }
 
 /* NAV desplegable */
 
 nav ul {
     position: absolute;
-    top: 10vh;
+    top: 11vh;
+    left: 6vw;
 }
 
 .nav__man, .title__unselected {
     color: grey;
+}
+
+.title__selected {
+    font-weight: bold;
 }
 
 .promo {
@@ -72,18 +109,219 @@ main, section {
     height: auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
+/* Formateo de las boxes con los articulos*/
+
 .article-box {
-    width: 20%;
+    width: 300px;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5%;
 }
 
-/* Temporalmente sin imagenes para hacer la estructura*/
+.article-box__image {
+    height: auto;
+    width: 100%;
+    transition-duration: 0.5s;
+}
+
+.article-box__image:hover {
+    transform: scale(1.5);
+    transition-duration: 0.5s;
+}
+
+.article-box__name, .article-box__price {
+    font-size: 70%;
+    text-align: center;
+}
+
 .article-box__image, .article-box__name, .article-box__price {
     width: 100%;
 }
+
+/* NEWSLETTER */
+
+.newsletter, .contact {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider {
+    width: 80%;
+    border: 1px solid #ebebeb;
+    margin: 20px 0;
+}
+
+.newsletter h5 {
+    font-weight: normal;
+}
+
+.newsletter form, .newsletter h4, .newsletter h5 {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.newsletter form {
+    margin-top: 20px;
+}
+
+form input {
+    border-bottom: 2px solid black;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+/* CONTACT*/
+
+.contact h5, .contact ul, .contact p {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.contact ul {
+    flex-direction: row;
+    text-decoration: none;
+    height: 50%;
+    width: 100%;
+    justify-content: space-around
+}
+
+.contact li {
+    width: 30%;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    display: none;
+}
+
+.shopping-guide, .services, .companys, .policy, .social, .payment {
+    width: 10%;
+    height: auto;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+    
+ }
+ @media (min-width: 768px) {
+    .newsletter h4, .newsletter h5, footer p {
+        font-size: 150%;
+    }
+
+    form {
+        align-items: center;
+    }
+
+    form input {
+        width: 500px;
+    }
+    
+ }
+ @media (min-width: 992px) {
+    header {
+        margin-top: 30px;
+        width: 100vw;
+    }
+
+    .title ul, nav h2, nav ul {
+        display: flex;
+    }
+
+    nav {
+        justify-content: space-around;
+    }
+
+    nav ul {
+        flex-direction: column;
+        font-size: 20px;
+        justify-content: flex-start;
+    }
+
+    nav img {
+        display: none;
+    }
+
+    .title {
+        justify-content: space-around;
+    }
+
+    .title ul {
+        justify-content: space-around;
+    }
+
+    .divider {
+        margin: 40px 0;
+    }
+
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        cursor: pointer;
+    }
+
+    .contact li {
+        cursor: pointer;
+    }
+
+    .browser {
+        display: flex;
+    }
+
+    .browser-n-filter {
+        flex-direction: row;
+    }
+
+    .browser-n-filter div {
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    .browser-n-filter i {
+        font-size: 20px;
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+    }
+/* Preguntar en clase*/    
+
+    .i:first-child {
+        display: none;
+    }
+
+ }
+ @media (min-width: 1200px) {
+    
+ }
